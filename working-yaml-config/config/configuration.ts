@@ -6,9 +6,8 @@ import { join } from 'path';
 const YAML_CONFIG_FILENAME = 'config.yaml';
 
 export default () => {
-    const config = yaml.load(
-        readFileSync(join(__dirname, YAML_CONFIG_FILENAME), 'utf8'),
-      )
-
-  return config as object; //this is necessary, so that this file fullfils the API
+  return (<object>
+    yaml.load(
+      readFileSync(join(__dirname, YAML_CONFIG_FILENAME), 'utf8'),
+    ));
 };
