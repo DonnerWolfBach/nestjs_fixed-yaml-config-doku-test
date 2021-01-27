@@ -1,1 +1,3 @@
 hello: "hello world"
+bool: true
+alternative: "This is an alternative"
